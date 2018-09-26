@@ -1,0 +1,74 @@
+.index_wrap {
+  height: 100%;
+  background-color: #f5f5f5;
+  .panel {
+    padding: 26px 33px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    .tool_bar {
+      text-align: left;
+      .tab_bar {
+        display: inline-block;
+        .tab_item {
+          display: inline-block;
+          padding: 0 25px;
+          height: 30px;
+          line-height: 30px;
+          color: #888888;
+          font-size: 16px;
+          text-align: center;
+          background-color: #F5F5F5;
+          border-radius: 15px;
+        }
+        .tab_item.active {
+          color: @primary_color;
+          background-color: #E4EEFB;
+        }
+      }
+      .right_panel {
+        float: right;
+        padding: 6px 0;
+        label {
+          font-size: 16px;
+          color: #222;
+        }
+        span {
+          font-size: 18px;
+          color: #D9472E;
+          font-weight: bold;
+        }
+      }
+      .left {
+        text-align: left;
+        display: inline-block;
+        label {
+          font-size: 16px;
+          color: #000;
+        }
+        span {
+          font-size: 18px;
+          color: #D9472E;
+          font-weight: bold;
+        }
+      }
+    }
+    .el-button--mini {
+      height: 30px;
+      font-size: 16px;
+      margin-left: 21px;
+      border-radius: 5px;
+    }
+    .charts {
+      height: 320px;
+    }
+  }
+  .panel:last-child {
+    margin-bottom: 0;
+  }
+  .el-range-editor--mini.el-input__inner {
+    border: 1px solid #d2d2d2;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 39px;
+  }
+}

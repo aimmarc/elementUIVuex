@@ -1,0 +1,228 @@
+.menu_wrap {
+  height: 100%;
+  .logo {
+    height: 79px;
+    background-color: @theme_color;
+    padding: 26px 49px;
+    box-sizing: border-box;
+    .title {
+      font-size: 28px;
+      color: #fff;
+    }
+    .sub_title {
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+  .el-menu {
+    border-right: 0;
+    z-index: 11;
+  }
+  .shop_panel {
+    background-color: #1A232F;
+    padding: 34px 0;
+    text-align: center;
+    .header {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+      background-color: #28A380;
+      text-align: center;
+      .header_icon {
+        display: inline-block;
+        background: url("../../images/rest@2x.png") center no-repeat;
+        background-size: contain;
+        width: 32px;
+        height: 32px;
+        margin-top: 20px;
+      }
+      .rest {
+        text-align: center;
+        padding-top: 10px;
+        font-size: 14px;
+        color: #CEF1E7;
+      }
+    }
+    .shop_name {
+      font-size: 16px;
+      color: #fff;
+      text-align: center;
+      padding-top: 19px;
+      padding-bottom: 12px;
+    }
+    .el-button--mini {
+      padding: 10px 26px;
+      font-size: 14px;
+    }
+  }
+  .el-submenu__title {
+    background-color: #202A38 !important;
+    font-size: 16px;
+    color: #6F7C8E;
+    padding: 0 0 0 98px !important;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+  }
+  .el-menu-item {
+    padding: 0 0 0 56px !important;
+    text-align: left;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .is-active {
+    position: relative;
+  }
+  .is-active::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    content: ' ';
+    width: 4px;
+    height: 100%;
+    background-color: #D9472E;
+    box-sizing: border-box;
+  }
+  ul {
+    padding: 16px 0;
+  }
+  .el-submenu.is-opened>.el-submenu__title .el-submenu__icon-arrow {
+    transform: rotate(0deg);
+  }
+  .el-submenu__icon-arrow {
+    transform: rotate(-90deg);
+  }
+  .icon_default {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: center;
+    margin-right: 25px;
+  }
+  .icon_goods {
+    background: url("../../images/commodity_management.svg") center no-repeat;
+    background-size: contain;
+  }
+  .icon_user {
+    width: 15px;
+    height: 15px;
+    background: url("../../images/customer_management.svg") center no-repeat;
+    background-size: contain;
+  }
+  .icon_users {
+    width: 16px;
+    height: 14px;
+    background: url("../../images/employee_management.svg") center no-repeat;
+    background-size: contain;
+    margin-top: -2px;
+  }
+  .icon_income {
+    background: url("../../images/income_statistics.svg") center no-repeat;
+    background-size: contain;
+    margin-top: -3px;
+    margin-left: -2px;
+  }
+  .icon_sales {
+    width: 14px;
+    background: url("../../images/sales_statistics.svg") center no-repeat;
+    background-size: contain;
+    margin-top: -3px;
+  }
+  .icon_discounts {
+    width: 16px;
+    height: 15px;
+    background: url("../../images/discounts.svg") center no-repeat;
+    background-size: contain;
+    margin-top: -2px;
+    margin-left: -2px;
+  }
+  .icon_plat {
+    width: 14px;
+    background: url("../../images/platform_protocol.svg") center no-repeat;
+    background-size: contain;
+    margin-top: -3px;
+  }
+  .icon_msg {
+    width: 13px;
+    height: 16px;
+    background: url("../../images/new.svg") center no-repeat;
+    background-size: contain;
+    margin-left: 1px;
+  }
+  .icon_help {
+    background: url("../../images/common_problem.svg") center no-repeat;
+    background-size: contain;
+    margin-top: -2px;
+  }
+  .icon_setting {
+    background: url("../../images/set_up.svg") center no-repeat;
+    background-size: contain;
+    margin-top: -2px;
+  }
+  .is-active {
+    > .icon_goods {
+      background: url("../../images/commodity_management_current.svg") center no-repeat;
+      background-size: contain;
+    }
+    > .icon_user {
+      background: url("../../images/customer_management_current.svg") center no-repeat;
+      background-size: contain;
+    }
+    > .icon_users {
+      background: url("../../images/employee_managemen_currentt.svg") center no-repeat;
+      background-size: contain;
+    }
+    > .icon_income {
+      background: url("../../images/income_statistics_current.svg") center no-repeat;
+      background-size: contain;
+    }
+    > .icon_sales {
+      background: url("../../images/sales_statistics_current.svg") center no-repeat;
+      background-size: contain;
+    }
+    > .icon_discounts {
+      background: url("../../images/discounts_current.svg") center no-repeat;
+      background-size: contain;
+    }
+    > .icon_plat {
+      background: url("../../images/platform_protocol_current.svg") center no-repeat;
+      background-size: contain;
+    }
+    > .icon_msg {
+      background: url("../../images/new_current.svg") center no-repeat;
+      background-size: contain;
+    }
+    > .icon_help {
+      background: url("../../images/common_problem_current.svg") center no-repeat;
+      background-size: contain;
+    }
+    > .icon_setting {
+      background: url("../../images/set_up_current.svg") center no-repeat;
+      background-size: contain;
+    }
+  }
+  .index {
+    padding: 16px 0;
+    .icon_home {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url("../../images/home.svg") center no-repeat;
+      background-size: contain;
+      vertical-align: center;
+      margin-right: 25px;
+      margin-top: -2px;
+    }
+
+    .is-active {
+      .icon_home {
+        background: url("../../images/home_current.svg") center no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}
+
