@@ -1,5 +1,5 @@
 <template>
-  <div class="index_wrap">
+  <div class="shop_wrap">
     <el-container style="height: 100%">
       <el-aside class="menu_content">
         <Menu></Menu>
@@ -8,6 +8,7 @@
         <Header></Header>
         <el-main class="main_content">
           <!--页面组件标签-->
+
         </el-main>
       </el-container>
     </el-container>
@@ -32,6 +33,6 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="less" src="../style/shop.less">
 
 </style>

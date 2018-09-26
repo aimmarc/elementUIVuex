@@ -57,11 +57,11 @@ html, body {
   height: 100%;
 }
 
-#app {
+#app ,#app>div {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  //text-align: center;
   color: #2c3e50;
   height: 100%;
 }
@@ -80,18 +80,8 @@ a {
 }
 .clearfix{zoom: 1;}/* 兼容IE专用 */
 
-.content_container {
-  flex-direction: column!important;
+.hidden {
+  display: none!important;
 }
 
-.main_content {
-  padding: 10px!important;
-  background-color: rgb(238, 241, 246) !important;
-}
-
-.menu_content {
-  z-index: 11;
-  background-color: #1A232F;
-  width: 284px;
-}
 

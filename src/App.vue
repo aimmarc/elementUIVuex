@@ -5,10 +5,10 @@
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  export default {
+    name: 'App'
+  }
 </script>
 
-<style lang="less" src="./style/base.less">
+<style lang="less" src="./style/container.less">
 </style>
