@@ -1,11 +1,7 @@
 <template>
   <div class="login_wrap">
     <div class="banner">
-      <div class="logo_panel">
-        <i class="logo"></i>
-        <span class="split">|</span>
-        <span class="title">商户后台</span>
-      </div>
+      <Logo></Logo>
       <div class="login_panel">
         <div class="title">登录管理后台</div>
         <input type="text" class="login_input" placeholder="手机号" ref="phoneNumber">
@@ -21,7 +17,7 @@
             </div>
             <span class="auto_login">下次自动登录</span>
           </div>
-          <a class="right" href="">商户入驻 ></a>
+          <a class="right" href="#/merchantEntry">商户入驻 ></a>
         </div>
       </div>
     </div>
@@ -31,6 +27,7 @@
 
 <script>
   import Footer from '../components/Footer';
+  import Logo from '../components/Logo';
   import {REGEXP_PHONE} from '../constant/regexp';
 
 
@@ -38,7 +35,8 @@
   export default {
     name: "Login",
     components: {
-      Footer
+      Footer,
+      Logo
     },
     data() {
       return {

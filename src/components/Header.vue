@@ -13,7 +13,7 @@
           <a href="">李店员</a>
         </div>
         <div class="user_item">
-          <a href="">退出</a>
+          <a href="#/login">退出</a>
         </div>
       </div>
     </el-header>
@@ -35,7 +35,6 @@
     },
     mounted() {
       this.title = store.state.title;
-      console.log(store.state.title)
     }
   }
 </script>

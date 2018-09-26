@@ -18,3 +18,15 @@ export function setStorage(key, value) {
 export function getStorage(key) {
   return Cookies.get(key);
 }
+
+
+/**
+ * 转换日期格式
+ * @param date
+ */
+export function parseDate(date) {
+  if (date == undefined || date == null) {
+    return;
+  }
+  return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+}

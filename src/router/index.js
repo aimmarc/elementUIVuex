@@ -4,6 +4,7 @@ import Index from '../pages/Index';
 import Goods from '../pages/Goods';
 import Shop from '../pages/Shop';
 import Login from '../pages/Login';
+import MerchantEntry from '../pages/MerchantEntry';
 
 Vue.use(Router);
 
@@ -25,6 +26,10 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login,
+    },{
+      path: '/merchantEntry',
+      name: 'MerchantEntry',
+      component: MerchantEntry,
     },
   ]
 })

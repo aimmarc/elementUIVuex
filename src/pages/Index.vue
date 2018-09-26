@@ -6,14 +6,14 @@
       </el-aside>
       <el-container class="content_container">
         <Header></Header>
-        <el-main class="main_content">
+        <el-main class="main_content" v-loading="loading">
           <!--页面组件标签-->
           <div class="panel">
             <div class="tool_bar clearfix">
               <div class="tab_bar">
-                <div class="tab_item active">今天</div>
-                <div class="tab_item">最近七天</div>
-                <div class="tab_item">本月</div>
+                <div v-bind:class="tabIndex == '0' ? 'tab_item active' : 'tab_item'" @click="changeTabs('0')">今天</div>
+                <div v-bind:class="tabIndex == '1' ? 'tab_item active' : 'tab_item'" @click="changeTabs('1')">最近七天</div>
+                <div v-bind:class="tabIndex == '2' ? 'tab_item active' : 'tab_item'" @click="changeTabs('2')">本月</div>
               </div>
               <el-date-picker
                 v-model="queryForm.date"
@@ -21,9 +21,11 @@
                 type="daterange"
                 range-separator="至"
                 start-placeholder="开始日期"
-                end-placeholder="结束日期">
+                end-placeholder="结束日期"
+                :picker-options="pickOptions"
+              >
               </el-date-picker>
-              <el-button size="mini" type="primary">查询</el-button>
+              <el-button size="mini" type="primary" @click="doQuery">查询</el-button>
               <div class="right_panel">
                 <label>总销售量：</label><span v-text="totalNum"></span>，
                 <label>总销售额：</label><span v-text="totalMoney"></span>
@@ -54,6 +56,7 @@
   import Menu from '../components/Menu';
   import Header from '../components/Header';
   import echarts from 'echarts';
+  import {parseDate} from '../util/common'
 
 
   // 首页
@@ -67,7 +70,8 @@
       return {
         page: 1,
         queryForm: {
-          date: '',
+          max: '',
+          min: '',
         },
         totalNum: 700,
         totalMoney: 40000.00,
@@ -75,6 +79,11 @@
         visit: 150,
         followAdd: 10,
         cancelFollow: 1,
+        pickOptions: {
+          onPick: this.onPick,
+        },
+        loading: false,
+        tabIndex: '0',
       }
     },
     mounted() {
@@ -226,6 +235,32 @@
             }
           ]
         });
+      },
+      /**
+       * 选中日期
+       * @param max
+       * @param min
+       */
+      onPick(date) {
+        this.max = parseDate(date.maxDate);
+        this.min = parseDate(date.minDate);
+      },
+      /**
+       * 查询
+       */
+      doQuery() {
+        this.loading = true;
+        setTimeout(() => {
+          this.loading = false;
+        }, 3000);
+      },
+      /**
+       * 切换tabs
+       * @param index
+       */
+      changeTabs(index) {
+        this.tabIndex = index;
+        this.doQuery();
       }
     }
   }
