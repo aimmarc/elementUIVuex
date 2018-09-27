@@ -28,9 +28,6 @@
     props: {
       title: String,
     },
-    mounted() {
-      console.log(this.title)
-    }
   }
 </script>
 
