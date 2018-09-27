@@ -85,6 +85,9 @@
         defaultActive: '0',
       }
     },
+    props: {
+      callback: Function,
+    },
     mounted() {
       this.getDefault();
     },
@@ -109,7 +112,7 @@
         }
         this.defaultActive = index;
         setStorage(ACTIVE_MENU, index);
-        console.log(store.state.title)
+        this.callback();
       }
     }
   }
