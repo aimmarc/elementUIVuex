@@ -32,7 +32,6 @@
     },
     mounted() {
       this.title = store.state.title;
-      this.$router.push('/index');
     },
     methods: {
       /**

@@ -23,7 +23,7 @@
       :default-active="defaultActive"
     >
       <div class="index">
-        <a href="#/index">
+        <a href="#/">
           <el-menu-item index="0" v-on:click="setDefault('0', '首页')"><i class="icon_home"></i>首页</el-menu-item>
         </a>
       </div>
@@ -53,8 +53,10 @@
         <template slot="title">营销</template>
         <el-menu-item index="3-1"><i class="icon_discounts icon_default" v-on:click="setDefault('3-1', '折扣活动')"></i>折扣活动
         </el-menu-item>
-        <el-menu-item index="3-2"><i class="icon_plat icon_default" v-on:click="setDefault('3-2', '平台协议')"></i>平台协议
-        </el-menu-item>
+        <a href="#/protocol">
+          <el-menu-item index="3-2"  v-on:click="setDefault('3-2', '平台协议')"><i class="icon_plat icon_default"></i>平台协议
+          </el-menu-item>
+        </a>
       </el-submenu>
       <el-submenu index="4">
         <template slot="title">其他</template>
@@ -107,12 +109,12 @@
        */
       setDefault(index, title) {
         store.dispatch('setTitle', title);
+        this.callback();
         if (getStorage(ACTIVE_MENU) == index) {
           return;
         }
         this.defaultActive = index;
         setStorage(ACTIVE_MENU, index);
-        this.callback();
       }
     }
   }

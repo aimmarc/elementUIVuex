@@ -2,7 +2,7 @@
   <div class="index_wrap">
 
     <!--页面组件标签-->
-    <div class="panel">
+    <div class="panel" v-loading="loading">
       <div class="tool_bar clearfix">
         <div class="tab_bar">
           <div v-bind:class="tabIndex == '0' ? 'tab_item active' : 'tab_item'" @click="changeTabs('0')">今天</div>
@@ -27,7 +27,7 @@
       </div>
       <div class="charts" id="charts1"></div>
     </div>
-    <div class="panel">
+    <div class="panel" v-loading="loading">
       <div class="tool_bar clearfix">
         <div class="left">
           <label>关注量：</label><span v-text="follow"></span>
