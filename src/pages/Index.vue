@@ -1,54 +1,45 @@
 <template>
   <div class="index_wrap">
-    <el-container style="height: 100%">
-      <el-aside class="menu_content">
-        <Menu></Menu>
-      </el-aside>
-      <el-container class="content_container">
-        <Header></Header>
-        <el-main class="main_content" v-loading="loading">
-          <!--页面组件标签-->
-          <div class="panel">
-            <div class="tool_bar clearfix">
-              <div class="tab_bar">
-                <div v-bind:class="tabIndex == '0' ? 'tab_item active' : 'tab_item'" @click="changeTabs('0')">今天</div>
-                <div v-bind:class="tabIndex == '1' ? 'tab_item active' : 'tab_item'" @click="changeTabs('1')">最近七天</div>
-                <div v-bind:class="tabIndex == '2' ? 'tab_item active' : 'tab_item'" @click="changeTabs('2')">本月</div>
-              </div>
-              <el-date-picker
-                v-model="queryForm.date"
-                size="mini"
-                type="daterange"
-                range-separator="至"
-                start-placeholder="开始日期"
-                end-placeholder="结束日期"
-                :picker-options="pickOptions"
-              >
-              </el-date-picker>
-              <el-button size="mini" type="primary" @click="doQuery">查询</el-button>
-              <div class="right_panel">
-                <label>总销售量：</label><span v-text="totalNum"></span>，
-                <label>总销售额：</label><span v-text="totalMoney"></span>
-              </div>
-            </div>
-            <div class="charts" id="charts1"></div>
-          </div>
-          <div class="panel">
-            <div class="tool_bar clearfix">
-              <div class="left">
-                <label>关注量：</label><span v-text="follow"></span>
-              </div>
-              <div class="right_panel">
-                <span v-text="visit"></span><label>来过</label>&nbsp;&nbsp;
-                <label>新增关注</label><span v-text="followAdd"></span>&nbsp;&nbsp;
-                <label>取消关注</label><span v-text="cancelFollow"></span>
-              </div>
-            </div>
-            <div class="charts" id="charts2"></div>
-          </div>
-        </el-main>
-      </el-container>
-    </el-container>
+
+    <!--页面组件标签-->
+    <div class="panel">
+      <div class="tool_bar clearfix">
+        <div class="tab_bar">
+          <div v-bind:class="tabIndex == '0' ? 'tab_item active' : 'tab_item'" @click="changeTabs('0')">今天</div>
+          <div v-bind:class="tabIndex == '1' ? 'tab_item active' : 'tab_item'" @click="changeTabs('1')">最近七天</div>
+          <div v-bind:class="tabIndex == '2' ? 'tab_item active' : 'tab_item'" @click="changeTabs('2')">本月</div>
+        </div>
+        <el-date-picker
+          v-model="queryForm.date"
+          size="mini"
+          type="daterange"
+          range-separator="至"
+          start-placeholder="开始日期"
+          end-placeholder="结束日期"
+          :picker-options="pickOptions"
+        >
+        </el-date-picker>
+        <el-button size="mini" type="primary" @click="doQuery">查询</el-button>
+        <div class="right_panel">
+          <label>总销售量：</label><span v-text="totalNum"></span>，
+          <label>总销售额：</label><span v-text="totalMoney"></span>
+        </div>
+      </div>
+      <div class="charts" id="charts1"></div>
+    </div>
+    <div class="panel">
+      <div class="tool_bar clearfix">
+        <div class="left">
+          <label>关注量：</label><span v-text="follow"></span>
+        </div>
+        <div class="right_panel">
+          <span v-text="visit"></span><label>来过</label>&nbsp;&nbsp;
+          <label>新增关注</label><span v-text="followAdd"></span>&nbsp;&nbsp;
+          <label>取消关注</label><span v-text="cancelFollow"></span>
+        </div>
+      </div>
+      <div class="charts" id="charts2"></div>
+    </div>
   </div>
 </template>
 

@@ -22,20 +22,12 @@
 </template>
 
 <script>
-  import {store} from '../vuex/store';
-
-
   // 导航栏
   export default {
     name: "Header",
-    data() {
-      return {
-        title: '首页',
-      }
+    props: {
+      title: String,
     },
-    mounted() {
-      this.title = store.state.title;
-    }
   }
 </script>
 
