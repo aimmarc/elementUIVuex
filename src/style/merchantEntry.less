@@ -49,12 +49,73 @@
     }
   }
   .entry_form_panel {
-    padding: 25px 80px;
     background-color: #fff;
     margin-top: 37px;
     box-sizing: border-box;
+    .head {
+      height: 70px;
+      line-height: 70px;
+      border-bottom: 1px solid #F5F5F5;
+      padding: 0 80px;
+      box-sizing: border-box;
+      .item {
+        position: relative;
+        display: inline-block;
+        padding-right: 63px;
+        color: #666;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .item.active {
+        color: @theme_color;
+        .line {
+          position: absolute;
+          display: inline-block;
+          background-color: @theme_color;
+          width: 47px;
+          height: 2px;
+          content: ' ';
+          left: 8px;
+          bottom: 0;
+        }
+      }
+    }
     .body {
       padding: 66px 293px;
+      .body_item {
+        padding-left: 120px;
+        .tick {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          border: 1px solid #aaa;
+          border-radius: 2px;
+          text-align: center;
+          vertical-align: middle;
+          cursor: pointer;
+          .icon_tick {
+            display: inline-block;
+            width: 12px;
+            height: 8px;
+            background: url("../images/choice@2x.png") center no-repeat;
+            background-size: contain;
+            margin-bottom: 1px;
+          }
+        }
+        .auto_login {
+          font-size: 14px;
+          color: #333;
+          margin-left: 15px;
+          vertical-align: middle;
+        }
+      }
+      .btn_panel {
+        text-align: center;
+        padding-top: 84px;
+        .el-button {
+          width: 204px;
+        }
+      }
     }
   }
 }

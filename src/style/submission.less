@@ -1,0 +1,83 @@
+.submission_wrap {
+  background-color: #F5F5F5;
+  min-height: 100%;
+  height: auto !important;
+  padding-bottom: 37px;
+  .banner {
+    height: 120px;
+    line-height: 120px;
+    background: url("../images/top_bg@2x.png") center no-repeat;
+    background-size: cover;
+  }
+  .steps {
+    padding-top: 55px;
+    li {
+      position: relative;
+      float: left;
+      width: 25%;
+      height: 77px;
+      line-height: 77px;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      .badge {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 30px;
+        font-size: 18px;
+        color: #333;
+        left: 31px;
+        top: -15px;
+        background-color: #fff;
+      }
+    }
+    li:nth-child(odd) {
+      background: url("../images/label1@2x.png") center no-repeat;
+      background-size: contain;
+      .badge {
+        border: 2px solid #92B5E1;
+      }
+    }
+    li:nth-child(even) {
+      background: url("../images/label2@2x.png") center no-repeat;
+      background-size: contain;
+      .badge {
+        border: 2px solid #B4C7DF;
+      }
+    }
+  }
+  .main_panel {
+    background-color: #fff;
+    padding: 185px 0;
+    margin-top: 38px;
+    text-align: center;
+    .icon_wait {
+      display: inline-block;
+      background: url("../images/ic_wait@2x.png") center no-repeat;
+      background-size: contain;
+      width: 140px;
+      height: 140px;
+      margin-bottom: 90px;
+    }
+    .msg {
+      font-size: 18px;
+      color: #333;
+      text-align: center;
+      padding-bottom: 21px;
+    }
+    .sub {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      line-height: 25px;
+      padding-bottom: 56px;
+    }
+    .btn_panel {
+      .el-button {
+        width: 140px;
+      }
+    }
+  }
+}

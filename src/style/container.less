@@ -3,21 +3,30 @@
   margin: 0 auto;
 }
 
-
 .content_container {
-  flex-direction: column!important;
+  flex-direction: column !important;
 }
 
 .main_content {
-  padding: 10px!important;
+  padding: 10px !important;
   background-color: rgb(238, 241, 246) !important;
   height: 100%;
 }
 
 .menu_content {
-  z-index: 11!important;
-  background-color: #1A232F!important;
-  width: 284px!important;
+  z-index: 11 !important;
+  background-color: #1A232F !important;
+  width: 284px !important;
+}
+
+.el-button {
+  height: 36px;
+  font-size: 14px!important;
+  border-radius: 5px;
+}
+
+.el-button--default {
+  border: 1px solid @theme_color;
 }
 
 .form_wrap {
@@ -27,7 +36,7 @@
     border-radius: 5px;
     padding: 0 18px;
   }
-  .el-select{
+  .el-select {
     width: 100%;
     .el-input--suffix {
       .el-input__inner {
@@ -35,5 +44,80 @@
       }
     }
   }
-
+  .labels {
+    position: relative;
+    display: inline-block;
+    padding: 0 25px;
+    height: 36px;
+    background-color: #eee;
+    border-radius: 5px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin-right: 10px;
+    .close {
+      display: inline-block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: url("../images/close@2x.png") center no-repeat;
+      background-size: contain;
+      right: -8px;
+      top: -8px;
+      cursor: pointer;
+    }
+  }
+  .add {
+    display: inline-block;
+    font-size: 14px;
+    color: @theme_color;
+    margin-left: 25px;
+    cursor: pointer;
+  }
+  .el-form-item {
+    margin-bottom: 35px;
+  }
+  .el-button {
+    height: 36px;
+    font-size: 14px;
+    color: #fff;
+  }
+  .el-cascader {
+    width: 100%;
+    .el-input__inner {
+      background-color: #f5f5f5;
+    }
+  }
+  .confirm_code {
+    position: absolute;
+    top: -2px;
+    right: 18px;
+    font-size: 14px;
+    color: @theme_color;
+    line-height: 46px;
+    cursor: pointer;
+  }
+  .avatar-uploader .el-upload {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: #F8F8F8;
+  }
+  .avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+  }
+  .avatar-uploader-icon {
+    font-size: 40px;
+    color: #DCDCDC;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+  }
+  .avatar {
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
 }

@@ -23,7 +23,7 @@
       :default-active="defaultActive"
     >
       <div class="index">
-        <a href="#/">
+        <a href="#/index">
           <el-menu-item index="0" v-on:click="setDefault('0', '首页')"><i class="icon_home"></i>首页</el-menu-item>
         </a>
       </div>
@@ -62,8 +62,10 @@
         </el-menu-item>
         <el-menu-item index="4-2"><i class="icon_help icon_default" v-on:click="setDefault('4-2', '常见问题')"></i>常见问题
         </el-menu-item>
-        <el-menu-item index="4-3"><i class="icon_setting icon_default" v-on:click="setDefault('4-3', '设置')"></i>设置
-        </el-menu-item>
+        <a href="#/setting" v-on:click="setDefault('4-3', '设置')">
+          <el-menu-item index="4-3"><i class="icon_setting icon_default" ></i>设置
+          </el-menu-item>
+        </a>
       </el-submenu>
     </el-menu>
   </div>
@@ -107,6 +109,7 @@
         }
         this.defaultActive = index;
         setStorage(ACTIVE_MENU, index);
+        console.log(store.state.title)
       }
     }
   }
