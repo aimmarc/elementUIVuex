@@ -1,0 +1,40 @@
+.news_wrap {
+  background-color: #fff;
+  padding: 0 32px 42px;
+  min-height: 100%;
+  box-sizing: border-box;
+  .news_list {
+    li {
+      padding-top: 42px;
+      position: relative;
+      border-bottom: 1px solid #eee;
+      .left {
+        position: absolute;
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        background: url("../images/ic_logo@2x.png") center no-repeat;
+        background-size: contain;
+      }
+      .right {
+        padding-left: 35+64px;
+        .date {
+          font-size: 14px;
+          color: #aaa;
+          padding-top: 10px;
+        }
+        .title {
+          font-size: 16px;
+          font-weight: bold;
+          padding: 13px 0 30px;
+        }
+        .content {
+          font-size: 14px;
+          color: #333;
+          line-height: 2;
+          padding-bottom: 42px;
+        }
+      }
+    }
+  }
+}

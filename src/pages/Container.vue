@@ -16,8 +16,7 @@
 <script>
   import Menu from '../components/Menu';
   import Header from '../components/Header';
-  import {store, ACTION_SET_LOGIN} from '../vuex/store';
-  import {getHeaders} from "../util/request";
+  import {store} from '../vuex/store';
 
   // 根容器
   export default {
@@ -32,18 +31,6 @@
       }
     },
     mounted() {
-      if (getHeaders().loginStatus != 1) {
-        store.dispatch(ACTION_SET_LOGIN, 0);
-      } else {
-        store.dispatch(ACTION_SET_LOGIN, 1);
-      }
-      if (this.$route.path.indexOf('/protocol') < 0) {
-        // 判断是否登录
-        if (store.state.loginStatus === 0) {
-          this.$router.push('/login');
-          return;
-        }
-      }
       this.title = store.state.title;
     },
     methods: {

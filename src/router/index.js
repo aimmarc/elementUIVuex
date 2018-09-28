@@ -12,6 +12,8 @@ import Protocol from '../pages/Protocol';
 import SellerProtocol from '../pages/SellerProtocol';
 import UserProtocol from '../pages/UserProtocol';
 import KnowledgeProtocol from '../pages/KnowledgeProtocol';
+import NewsCenter from '../pages/NewsCenter';
+import Problem from '../pages/Problem';
 
 
 Vue.use(Router);
@@ -53,7 +55,15 @@ const Route = [
         component: KnowledgeProtocol,
       }
     ]
-  },
+  }, {
+    path: '/newsCenter',
+    name: 'NewsCenter',
+    component: NewsCenter,
+  }, {
+    path: '/problem',
+    name: 'Problem',
+    component: Problem,
+  }
 ];
 
 // 基本路由

@@ -70,13 +70,13 @@ export const menuData = [
       {
         index: '4-1',
         text: '消息中心',
-        url: '/goods',
+        url: '/newsCenter',
         icon: 'icon_msg',
       },
       {
         index: '4-2',
         text: '常见问题',
-        url: '/goods',
+        url: '/problem',
         icon: 'icon_help',
       },
       {

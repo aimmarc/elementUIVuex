@@ -54,8 +54,9 @@
 <script>
   import {setStorage, getStorage} from '../util/common';
   import {ACTIVE_MENU} from '../constant/storage';
-  import {store, ACTION_SET_TITLE} from '../vuex/store';
+  import {store, ACTION_SET_TITLE, ACTION_SET_LOGIN} from '../vuex/store';
   import {menuData} from "../constant/menuData";
+  import {getHeaders} from "../util/request";
 
   export default {
     name: "Menu",
@@ -72,6 +73,20 @@
       callback: Function,
     },
     mounted() {
+      if (getHeaders().loginStatus != 1) {
+        store.dispatch(ACTION_SET_LOGIN, 0);
+      } else {
+        store.dispatch(ACTION_SET_LOGIN, 1);
+      }
+      if (this.$route.path.indexOf('/protocol') < 0) {
+        // 判断是否登录
+        if (store.state.loginStatus === 0) {
+          this.$router.push('/login');
+          return;
+        }
+      }
+      this.loginStatus = store.state.loginStatus;
+      console.log(this.loginStatus)
       this.getDefault();
     },
     methods: {
@@ -93,7 +108,7 @@
         this.callback();
         if (href.indexOf('/protocol') < 0) {
           // 判断是否登录
-          if (store.state.loginStatus === 0) {
+          if (store.state.loginStatus == 0) {
             this.$router.push('/login');
             return;
           }
