@@ -25,6 +25,8 @@
 
 <script>
   import {store, ACTION_SET_LOGIN} from "../vuex/store";
+  import {clearHeaders} from "../util/request";
+  import {getHeaders} from "../util/request";
 
 
   // 导航栏
@@ -39,11 +41,13 @@
       title: String,
     },
     mounted() {
+      store.dispatch(ACTION_SET_LOGIN, getHeaders().loginStatus);
       this.loginStatus = store.state.loginStatus;
     },
     methods: {
       logout() {
         store.dispatch(ACTION_SET_LOGIN, 0); // 设置登录状态为0
+        clearHeaders();
       }
     }
   }

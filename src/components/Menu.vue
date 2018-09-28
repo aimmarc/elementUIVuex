@@ -72,13 +72,6 @@
       callback: Function,
     },
     mounted() {
-      if (this.$route.path.indexOf('/protocol') < 0) {
-        // 判断是否登录
-        if (store.state.loginStatus === 0) {
-          this.$router.push('/login');
-          return;
-        }
-      }
       this.getDefault();
     },
     methods: {
