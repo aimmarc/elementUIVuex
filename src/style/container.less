@@ -30,6 +30,41 @@
 }
 
 .form_wrap {
+  .form_space {
+    padding-right: 195px;
+    padding-top: 48px;
+    padding-left: 32px;
+    .title {
+      padding-top: 48px;
+      font-size: 14px;
+      color: #888;
+      padding-bottom: 41px;
+    }
+    .tab_bar {
+      display: inline-block;
+      margin-bottom: 32px;
+      .tab_item {
+        display: inline-block;
+        padding: 0 25px;
+        height: 30px;
+        line-height: 30px;
+        color: #888888;
+        font-size: 16px;
+        text-align: center;
+        background-color: #F5F5F5;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      .tab_item.active {
+        color: @primary_color;
+        background-color: #E4EEFB;
+      }
+    }
+  }
+  .footer {
+    padding: 88px 0 28px;
+    text-align: center;
+  }
   .el-input__inner, el-input--suffix {
     height: 36px;
     border: 1px solid #eee;
@@ -88,7 +123,14 @@
   .el-button {
     height: 36px;
     font-size: 14px;
+    color: @theme_color;
+    i {
+      margin-right: 10px;
+    }
+  }
+  .el-button--primary {
     color: #fff;
+    margin-right: 48px;
   }
   .el-cascader {
     width: 100%;
@@ -158,6 +200,7 @@
   .el-button {
     height: 40px;
     font-size: 14px;
+    border: 1px solid #eee;
     i {
       margin-right: 10px;
     }

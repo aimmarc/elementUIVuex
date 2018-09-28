@@ -41,7 +41,11 @@
       title: String,
     },
     mounted() {
-      store.dispatch(ACTION_SET_LOGIN, getHeaders().loginStatus);
+      if (getHeaders() == null) {
+        store.dispatch(ACTION_SET_LOGIN, 0);
+      } else {
+        store.dispatch(ACTION_SET_LOGIN, getHeaders().loginStatus);
+      }
       this.loginStatus = store.state.loginStatus;
     },
     methods: {

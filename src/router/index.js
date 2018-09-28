@@ -14,6 +14,9 @@ import UserProtocol from '../pages/UserProtocol';
 import KnowledgeProtocol from '../pages/KnowledgeProtocol';
 import NewsCenter from '../pages/NewsCenter';
 import Problem from '../pages/Problem';
+import GoodsAdd from '../pages/GoodsAdd';
+import GoodsDefault from '../pages/GoodsDefault';
+import GoodsImport from '../pages/GoodsImport';
 
 
 Vue.use(Router);
@@ -28,6 +31,23 @@ const Route = [
     path: '/goods',
     name: 'Goods',
     component: Goods,
+    children: [
+    ]
+  }, {
+    path: '/goodsAdd',
+    name: 'GoodsAdd',
+    component: GoodsAdd,
+    children: [
+      {
+        path: '/',
+        name: 'GoodsDefault',
+        component: GoodsDefault,
+      }, {
+        path: '/goodsAdd/goodsImport',
+        name: 'GoodsImport',
+        component: GoodsImport,
+      }
+    ]
   }, {
     path: '/shop',
     name: 'Shop',

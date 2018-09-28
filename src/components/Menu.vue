@@ -73,6 +73,12 @@
       callback: Function,
     },
     mounted() {
+      if (getHeaders() == null) {
+        if (this.$route.path.indexOf('/protocol') < 0) {
+          this.$router.push('/login');
+        }
+        return;
+      }
       if (getHeaders().loginStatus != 1) {
         store.dispatch(ACTION_SET_LOGIN, 0);
       } else {
@@ -86,7 +92,6 @@
         }
       }
       this.loginStatus = store.state.loginStatus;
-      console.log(this.loginStatus)
       this.getDefault();
     },
     methods: {

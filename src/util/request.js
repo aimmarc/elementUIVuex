@@ -27,6 +27,9 @@ export function setHeaders(data) {
  * 获取header
  */
 export function getHeaders() {
+  if (Cookies.get(REQUEST_HEADERS) == undefined) {
+    return null;
+  }
   return JSON.parse(Cookies.get(REQUEST_HEADERS));
 }
 
