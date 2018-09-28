@@ -18,7 +18,7 @@
     border-right: 0;
     z-index: 11;
   }
-  .shop_panel {
+  .shop_panel, .shop_not_login {
     background-color: #1A232F;
     padding: 34px 0;
     text-align: center;
@@ -43,10 +43,24 @@
         font-size: 14px;
         color: #CEF1E7;
       }
+      .header_icon_not_login {
+        display: inline-block;
+        background: url("../../images/ic_not_logged_in@2x.png") center no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+      }
     }
     .shop_name {
       font-size: 16px;
       color: #fff;
+      text-align: center;
+      padding-top: 19px;
+      padding-bottom: 12px;
+    }
+    .shop_name_not_login {
+      font-size: 16px;
+      color: #aaa;
       text-align: center;
       padding-top: 19px;
       padding-bottom: 12px;
@@ -89,7 +103,7 @@
   ul {
     padding: 16px 0;
   }
-  .el-submenu.is-opened>.el-submenu__title .el-submenu__icon-arrow {
+  .el-submenu.is-opened > .el-submenu__title .el-submenu__icon-arrow {
     transform: rotate(0deg);
   }
   .el-submenu__icon-arrow {

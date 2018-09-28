@@ -99,7 +99,7 @@
               <div class="tick" @click="reading = !reading">
                 <i v-bind:class="reading ? 'icon_tick' : 'hidden icon_tick'"></i>
               </div>
-              <span class="auto_login">已阅读并同意<a href="">小二衣橱商家协议</a></span>
+              <span class="auto_login">已阅读并同意<a href="#/protocol">小二衣橱商家协议</a></span>
             </div>
             <div class="btn_panel" v-loading="loading">
               <el-button type="primary" @click="save">保存</el-button>

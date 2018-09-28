@@ -75,21 +75,7 @@
         },
         loading: false,
         tabIndex: '0',
-      }
-    },
-    mounted() {
-      this.loadCharts();
-    },
-    methods: {
-      /**
-       * 加载图表
-       */
-      loadCharts() {
-        //  初始图表
-        let myChart = echarts.init(document.getElementById('charts1'));
-        let myChart2 = echarts.init(document.getElementById('charts2'));
-        //  折线图配置项
-        myChart.setOption({
+        option: {
           grid: {
             left: 60,
             right: 20,
@@ -146,9 +132,8 @@
             },
             smooth: true,
           }]
-        });
-        // 柱状图
-        myChart2.setOption({
+        },
+        option2: {
           grid: {
             left: 60,
             right: 20,
@@ -225,7 +210,29 @@
               barWidth: 10,
             }
           ]
-        });
+        }
+      }
+    },
+    mounted() {
+      this.loadCharts();
+    },
+    methods: {
+      /**
+       * 加载图表
+       */
+      loadCharts() {
+        //  初始图表
+        let myChart = echarts.init(document.getElementById('charts1'));
+        let myChart2 = echarts.init(document.getElementById('charts2'));
+        //  折线图配置项
+        myChart.setOption(this.option);
+        // 柱状图
+        myChart2.setOption(this.option2);
+        // 自适应窗口变化
+        window.onresize = function () {
+          myChart.resize();
+          myChart2.resize();
+        };
       },
       /**
        * 选中日期

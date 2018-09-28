@@ -18,9 +18,9 @@
             合作协议
           </div>
           <div class="content">
-            <p><a href="">用户服务协议</a></p>
-            <p><a href="">商家服务协议</a></p>
-            <p><a href="">知识产权声明</a></p>
+            <p><a href="#/protocol/userProtocol">用户服务协议</a></p>
+            <p><a href="#/protocol">商家服务协议</a></p>
+            <p><a href="#/protocol/knowledgeProtocol">知识产权声明</a></p>
             <p><a href="">常见问题</a></p>
           </div>
         </div>
