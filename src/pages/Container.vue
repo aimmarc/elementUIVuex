@@ -4,7 +4,7 @@
       <Menu :menuProps="menuProps"></Menu>
     </el-aside>
     <el-container class="content_container">
-      <Header :title="title" :headerTabs="headerTabs"></Header>
+      <Header :headerProps="headerProps"></Header>
       <el-main class="main_content">
         <!--页面组件标签-->
         <router-view></router-view>
@@ -16,11 +16,13 @@
 <script>
   import Menu from '../components/Menu';
   import Header from '../components/Header';
-  import {store, ACTION_SET_TITLE, ACTION_SET_LOGIN} from '../vuex/store';
+  import {store, ACTION_SET_TITLE, ACTION_SET_LOGIN, ACTION_SET_HEADERTABS} from '../vuex/store';
   import {menuData} from "../constant/menuData";
   import {setStorage, getStorage} from "../util/common";
   import {ACTIVE_MENU} from '../constant/storage';
-  import {getHeaders} from "../util/request";
+  import {getHeaders, clearHeaders} from "../util/request";
+  import {REGEXP_HEADER} from "../constant/regexp";
+
 
   // 根容器
   export default {
@@ -33,6 +35,23 @@
       return {
         title: '',
         headerTabs: false,
+        headerProps: {
+          title: '',
+          headerTabs: false,
+          loginStatus: '',
+          logout: this.logout,
+          activeTab: '0',
+          changeTabs: this.changeTabs,
+          tabsValue: [
+            {
+              text: '商品管理',
+              url: '#/goods',
+            }, {
+              text: '分类管理',
+              url: '#/goodsClassify',
+            },
+          ]
+        },
         menuProps: {
           openList: ['1'],
           openType: true,
@@ -45,8 +64,8 @@
       }
     },
     mounted() {
-      this.title = store.state.title;
-      this.headerTabs = store.state.headerTabs;
+      this.headerProps.title = store.state.title;
+      this.headerProps.headerTabs = store.state.headerTabs;
       if (getHeaders() == null) {
         if (this.$route.path.indexOf('/protocol') < 0) {
           this.$router.push('/login');
@@ -66,6 +85,7 @@
         }
       }
       this.menuProps.loginStatus = store.state.loginStatus;
+      this.headerProps.loginStatus = store.state.loginStatus;
       this.getDefault();
     },
     methods: {
@@ -74,7 +94,7 @@
        */
       setDefault(index, title, href) {
         store.dispatch(ACTION_SET_TITLE, title);
-        this.title = store.state.title;
+        this.headerProps.title = store.state.title;
         if (href.indexOf('/protocol') < 0) {
           // 判断是否登录
           if (store.state.loginStatus == 0 || store.state.loginStatus == undefined) {
@@ -85,6 +105,7 @@
         this.$router.push(href);
         this.menuProps.defaultActive = index;
         setStorage(ACTIVE_MENU, index);
+        this.setHeaderTabs(title);
       },
       /**
        * 获取激活菜单
@@ -100,10 +121,29 @@
        * 退出登录
        */
       logout() {
-
+        store.dispatch(ACTION_SET_LOGIN, 0); // 设置登录状态为0
+        clearHeaders();
       },
+      /**
+       * 跳转到登录页
+       */
       toLogin() {
         store.state.loginStatus = 0;
+      },
+      /**
+       * 设置headerTabs是否显示
+       */
+      setHeaderTabs(title) {
+        if (REGEXP_HEADER.test(title)) {
+          store.dispatch(ACTION_SET_HEADERTABS, true);
+          this.headerProps.headerTabs = store.state.headerTabs;
+        } else {
+          store.dispatch(ACTION_SET_HEADERTABS, false);
+          this.headerProps.headerTabs = store.state.headerTabs;
+        }
+      },
+      changeTabs(type) {
+        this.headerProps.activeTab = type;
       }
     }
   }

@@ -15,6 +15,37 @@
       padding-top: 5px;
       box-sizing: border-box;
     }
+    .header_tabs {
+      display: inline-block;
+      float: left;
+      .head {
+        padding-top: 5px;
+        box-sizing: border-box;
+        .item {
+          position: relative;
+          display: inline-block;
+          padding-right: 63px;
+          color: #666;
+          font-size: 18px;
+          font-weight: bold;
+          cursor: pointer;
+          padding-bottom: 30px;
+        }
+        .item.active {
+          color: @theme_color;
+          .line {
+            position: absolute;
+            display: inline-block;
+            background-color: @theme_color;
+            width: 20px;
+            height: 2px;
+            content: ' ';
+            left: 25px;
+            bottom: 0;
+          }
+        }
+      }
+    }
     .item {
       margin-right: 61px;
     }

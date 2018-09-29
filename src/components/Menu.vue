@@ -56,9 +56,6 @@
   // 菜单
   export default {
     name: "Menu",
-    data() {
-      return {}
-    },
     props: {
       menuProps: Object,
     },

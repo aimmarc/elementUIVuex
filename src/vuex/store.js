@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export const ACTION_SET_LOGIN = 'setLogin';
 export const ACTION_SET_TITLE = 'setTitle';
+export const ACTION_SET_HEADERTABS = 'setHeaderTabs';
 
 export const store = new Vuex.Store({
   state: {

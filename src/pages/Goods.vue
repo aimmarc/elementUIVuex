@@ -122,12 +122,6 @@
       </el-table>
     </div>
     <div class="toolbar clearfix">
-      <!--<div class="checkbox">-->
-      <!--<div class="tick" @click="allCheck">-->
-      <!--<i v-bind:class="checked ? 'icon_tick' : 'hidden icon_tick'"></i>-->
-      <!--</div>-->
-      <!--<span class="auto_login">全选</span>-->
-      <!--</div>-->
       <div class="pagination">
         <el-pagination
           background
@@ -142,17 +136,9 @@
 </template>
 
 <script>
-  import Menu from '../components/Menu';
-  import Header from '../components/Header';
-
-
   // 商品管理
   export default {
     name: "Goods",
-    components: {
-      Menu,
-      Header
-    },
     data() {
       return {
         searchKey: '',
