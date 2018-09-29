@@ -20,7 +20,6 @@
       </span>
     </el-header>
   </div>
-
 </template>
 
 <script>
@@ -39,6 +38,7 @@
     },
     props: {
       title: String,
+      headerTabs: Boolean,
     },
     mounted() {
       if (getHeaders() == null) {

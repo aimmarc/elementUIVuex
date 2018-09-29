@@ -17,6 +17,7 @@ import Problem from '../pages/Problem';
 import GoodsAdd from '../pages/GoodsAdd';
 import GoodsDefault from '../pages/GoodsDefault';
 import GoodsImport from '../pages/GoodsImport';
+import GoodsClassify from '../pages/GoodsClassify';
 
 
 Vue.use(Router);
@@ -31,8 +32,7 @@ const Route = [
     path: '/goods',
     name: 'Goods',
     component: Goods,
-    children: [
-    ]
+    children: []
   }, {
     path: '/goodsAdd',
     name: 'GoodsAdd',
@@ -48,6 +48,10 @@ const Route = [
         component: GoodsImport,
       }
     ]
+  }, {
+    path: '/goodsClassify',
+    name: 'GoodsClassify',
+    component: GoodsClassify,
   }, {
     path: '/shop',
     name: 'Shop',

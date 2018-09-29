@@ -103,7 +103,7 @@
        * 登录
        */
       login() {
-        if (this.validCode() && this.validPhone()) {
+        if (this.validPhone() && this.validCode()) {
           setHeaders({loginStatus: 1});
           store.dispatch(ACTION_SET_LOGIN, getHeaders().loginStatus); // 设置登录状态为1，需网络请求后台返回正确后设置
           this.$router.push('/');

@@ -1,5 +1,65 @@
 .goods_import_wrap {
   padding: 84px 178px;
+  .header {
+    padding-bottom: 62px;
+    li {
+      float: left;
+      height: 51px;
+      line-height: 51px;
+      width: 33.3%;
+      color: #fff;
+      .excel {
+        display: inline-block;
+        width: 22px;
+        height: 21px;
+        background: url("../images/excel@2x.png") center no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-left: 24px;
+        margin-right: 20px;
+      }
+      .than {
+        display: inline-block;
+        width: 22px;
+        height: 21px;
+        background: url("../images/check@2x.png") center no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-left: 47px;
+        margin-right: 20px;
+      }
+      .import {
+        display: inline-block;
+        width: 22px;
+        height: 21px;
+        background: url("../images/import@2x.png") center no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-left: 47px;
+        margin-right: 20px;
+      }
+    }
+    li.step1 {
+      background: url("../images/bg1_current.png") center no-repeat;
+      background-size: contain;
+    }
+    li.step2 {
+      background: url("../images/bg2.png") center no-repeat;
+      background-size: contain;
+    }
+    li.step2.active {
+      background: url("../images/bg2_current.png") center no-repeat;
+      background-size: contain;
+    }
+    li.step3 {
+      background: url("../images/bg3.png") center no-repeat;
+      background-size: contain;
+    }
+    li.step3.active {
+      background: url("../images/bg3_current.png") center no-repeat;
+      background-size: contain;
+    }
+  }
   .title {
     font-size: 16px;
     font-weight: bold;
@@ -10,9 +70,83 @@
     color: #333;
     line-height: 1.6;
     padding-bottom: 32px;
+    .success {
+      color: @theme_color;
+    }
+    .error {
+      color: #D9472E;
+    }
   }
   .body {
     padding: 39px 57px;
     background-color: #f8f8f8;
+    .left {
+      position: relative;
+      text-align: center;
+      width: 50%;
+      padding: 113-39px 0;
+      float: left;
+      .split {
+        position: absolute;
+        display: inline-block;
+        height: 110px;
+        border-right: 1px dashed #d2d2d2;
+        right: 0;
+      }
+      .file {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        background: url("../images/file@2x.png") center no-repeat;
+        background-size: contain;
+      }
+      .el-upload__tip {
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+        line-height: 1.4;
+        padding-top: 23px;
+        span {
+          color: #D9472E;
+        }
+      }
+    }
+    .abnormal {
+      font-size: 14px;
+      color: #666;
+      padding-bottom: 20px;
+    }
+    .el-table {
+      border: 1px solid #e5e5e5;
+      th.is-leaf {
+        background-color: #F1F6FC;
+        .cell {
+          font-size: 14px;
+          font-weight: bold;
+          color: #000;
+        }
+      }
+      .el-table__row {
+        .cell {
+          font-size: 14px;
+          color: #333;
+        }
+      }
+    }
+    .footer {
+      padding-top: 38px;
+      line-height: 36px;
+      font-size: 14px;
+      color: #333;
+      .right {
+        float: right;
+        .el-button--default {
+          border: 1px solid #e5e5e5;
+        }
+      }
+      .success {
+        color: @theme_color;
+      }
+    }
   }
 }

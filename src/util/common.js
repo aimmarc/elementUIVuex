@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie';
+import {REGEXP_EXCEL} from "../constant/regexp";
 
 
 /**
@@ -52,4 +53,24 @@ export function fileReader(file) {
     }, false);
     reader.readAsDataURL(file);
   })
+}
+
+
+/**
+ * 判断表格文件
+ * @param file
+ */
+export function validXls(fileName) {
+  if (!fileName) {
+    return false;
+  }
+  let obj = fileName.split('.');
+  if (obj.length < 2) {
+    return false;
+  }
+  let suffix = obj[obj.length - 1];
+  if (!REGEXP_EXCEL.test(suffix)) {
+    return false;
+  }
+  return true;
 }
