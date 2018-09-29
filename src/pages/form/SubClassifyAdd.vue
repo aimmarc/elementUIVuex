@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="添加小分类" :visible.sync="formProps.visible" :before-close="formProps.onCancel" width="500px">
+  <el-dialog title="添加小分类" :visible.sync="formProps.visible" :before-close="onOk" width="500px">
     <div class="form_wrap">
       <el-form :model="formProps.addForm" :rules="formProps.rules" ref="addForm" label-width="120px">
         <el-form-item label="小分类名称" prop="classifyName">
