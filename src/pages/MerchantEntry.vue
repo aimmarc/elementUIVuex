@@ -257,6 +257,7 @@
           if (this.second < 1) {
             clearInterval(this.timer);
             this.codeFlag = false;
+            this.second = 59;
             return;
           }
           this.second = this.second - 1;
