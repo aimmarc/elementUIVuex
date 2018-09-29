@@ -1,7 +1,7 @@
 <template>
   <div class="classify_wrap">
     <div class="toolbar clearfix">
-      <el-button type="primary"><i class="el-icon-plus"></i>新增分类</el-button>
+      <el-button type="primary" @click="classifyProps.visible = true"><i class="el-icon-plus"></i>新增分类</el-button>
     </div>
     <div class="table">
       <el-table
@@ -76,16 +76,21 @@
       </div>
     </div>
     <SubClassifyAdd :formProps="formProps"></SubClassifyAdd>
+    <ClassifyAdd :classifyProps="classifyProps"></ClassifyAdd>
   </div>
 </template>
 
 <script>
   import SubClassifyAdd from './form/SubClassifyAdd';
+  import ClassifyAdd from './form/ClassifyAdd';
+
+
   // 商品分类
   export default {
     name: "GoodsClassify",
     components: {
-      SubClassifyAdd
+      SubClassifyAdd,
+      ClassifyAdd
     },
     data() {
       return {
@@ -107,6 +112,25 @@
           visible: false,
           onCancel: this.onCancel,
           onOk: this.onOk,
+          expandIndex: null,
+        },
+        classifyProps: {
+          addForm: {
+            classifyName: '',
+          },
+          rules: {
+            classifyName: [
+              {required: true, message: '请输入大分类名称', trigger: 'blur'},
+              {max: 10, message: '标签字数超出限制', trigger: 'blur'},
+            ],
+            subClassifyName: [
+              {required: true, message: '请输入小分类名称', trigger: 'blur'},
+              {max: 10, message: '标签字数超出限制', trigger: 'blur'},
+            ],
+          },
+          visible: false,
+          onCancel: this.onClassifyCancel,
+          onOk: this.onClassifyOk,
           expandIndex: null,
         }
       }
@@ -178,6 +202,7 @@
             });
             this.formProps.visible = false;
             this.$message.success('小分类添加成功');
+            form.resetFields();
           }
         })
       },
@@ -203,7 +228,29 @@
             message: '已取消删除'
           });
         });
-      }
+      },
+      /**
+       *
+       * @param form
+       */
+      onClassifyOk(form) {
+        form.validate(valid => {
+          if (valid) {
+            // 此处写请求逻辑，this.classifyProps.addForm为要存储的数据
+            this.classifyProps.visible = false;
+            this.$message.success('大分类添加成功');
+            form.resetFields();
+          }
+        })
+      },
+      /**
+       *
+       * @param form
+       */
+      onClassifyCancel(form) {
+        this.classifyProps.visible = false;
+        form.resetFields();
+      },
     },
   }
 </script>
