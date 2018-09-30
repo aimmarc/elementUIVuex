@@ -13,13 +13,13 @@ export const menuData = [
       {
         index: '1-2',
         text: '顾客管理',
-        url: '/goods',
+        url: '/custom',
         icon: 'icon_user',
       },
       {
         index: '1-3',
         text: '员工管理',
-        url: '/goods',
+        url: '/staff',
         icon: 'icon_users',
       },
     ]

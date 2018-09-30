@@ -1,0 +1,62 @@
+.custom_history_wrap {
+  padding: 14px 31px 53px;
+  min-height: 100%;
+  ul {
+    li {
+      padding: 40px 0;
+      border-bottom: 1px solid #eee;
+      .head {
+        .date {
+          font-size: 12px;
+          color: #333;
+        }
+      }
+      .body {
+        position: relative;
+        padding-top: 25px;
+        .left {
+          padding-right: 260px;
+          white-space: nowrap;
+          word-break: break-word;
+          overflow: hidden;
+          .goods_item {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            padding-right: 14px;
+            overflow: hidden;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .right {
+          position: absolute;
+          display: inline-block;
+          width: 260px;
+          height: 100%;
+          right: 0;
+          top: 0;
+          padding-top: 65px;
+          font-size: 14px;
+          color: #333;
+          text-align: right;
+          background-color: #fff;
+          box-sizing: border-box;
+          .number {
+            color: @theme_color;
+          }
+          .money_symbol {
+            font-size: 16px;
+            color: #D9472E;
+          }
+          .money {
+            font-size: 24px;
+            color: #D9472E;
+          }
+        }
+      }
+    }
+  }
+
+}

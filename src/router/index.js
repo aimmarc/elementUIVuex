@@ -18,6 +18,11 @@ import GoodsAdd from '../pages/GoodsAdd';
 import GoodsDefault from '../pages/GoodsDefault';
 import GoodsImport from '../pages/GoodsImport';
 import GoodsClassify from '../pages/GoodsClassify';
+import Staff from '../pages/Staff';
+import Custom from '../pages/Custom';
+import CustomRecord from '../pages/CustomRecord';
+import CustomRecordSub from '../pages/CustomRecordSub';
+import CustomRecordHistory from '../pages/CustomRecordHistory';
 
 
 Vue.use(Router);
@@ -87,7 +92,30 @@ const Route = [
     path: '/problem',
     name: 'Problem',
     component: Problem,
-  }
+  }, {
+    path: '/staff',
+    name: 'Staff',
+    component: Staff,
+  }, {
+    path: '/custom',
+    name: 'Custom',
+    component: Custom,
+  }, {
+    path: '/customRecord',
+    name: 'CustomRecord',
+    component: CustomRecord,
+    children: [
+      {
+        path: '/',
+        name: 'CustomRecordSub',
+        component: CustomRecordSub,
+      }, {
+        path: '/customRecord/customRecordHistory',
+        name: 'CustomRecordHistory',
+        component: CustomRecordHistory,
+      },
+    ]
+  },
 ];
 
 // 基本路由

@@ -272,6 +272,30 @@
             vertical-align: middle;
           }
         }
+        .action_bar {
+          position: relative;
+          .action_btn {
+            display: inline-block;
+            padding: 0 15px;
+            color: @theme_color;
+            font-size: 14px;
+          }
+          .success {
+            color: #23C467;
+          }
+          .error {
+            color: #D9472E;
+          }
+          .split {
+            display: inline-block;
+            content: '';
+            width: 1px;
+            height: 14px;
+            margin-top: 2px;
+            background-color: #e5e5e5;
+            right: 50%;
+          }
+        }
       }
     }
   }
@@ -326,6 +350,9 @@
         color: #333;
         font-weight: bold;
       }
+    }
+    .el-dialog__body {
+      padding: 45px 29px;
     }
     .el-dialog__footer {
       height: 50px;
