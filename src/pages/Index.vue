@@ -21,8 +21,8 @@
         </el-date-picker>
         <el-button size="mini" type="primary" @click="doQuery">查询</el-button>
         <div class="right_panel">
-          <label>总销售量：</label><span v-text="totalNum"></span>，
-          <label>总销售额：</label><span v-text="totalMoney"></span>
+          <label>总销售量：</label><span v-text="totalNum" class="number"></span>，
+          <label>总销售额：</label><span v-text="totalMoney" class="number"></span>
         </div>
       </div>
       <div class="charts" id="charts1"></div>
@@ -30,12 +30,12 @@
     <div class="panel" v-loading="loading">
       <div class="tool_bar clearfix">
         <div class="left">
-          <label>关注量：</label><span v-text="follow"></span>
+          <label>关注量：</label><span v-text="follow" class="number"></span>
         </div>
         <div class="right_panel">
-          <span v-text="visit"></span><label>来过</label>&nbsp;&nbsp;
-          <label>新增关注</label><span v-text="followAdd"></span>&nbsp;&nbsp;
-          <label>取消关注</label><span v-text="cancelFollow"></span>
+          <span v-text="visit" class="number"></span><label>来过</label>&nbsp;&nbsp;
+          <label>新增关注</label><span v-text="followAdd" class="number"></span>&nbsp;&nbsp;
+          <label>取消关注</label><span v-text="cancelFollow" class="number"></span>
         </div>
       </div>
       <div class="charts" id="charts2"></div>

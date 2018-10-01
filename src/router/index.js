@@ -23,6 +23,7 @@ import Custom from '../pages/Custom';
 import CustomRecord from '../pages/CustomRecord';
 import CustomRecordSub from '../pages/CustomRecordSub';
 import CustomRecordHistory from '../pages/CustomRecordHistory';
+import Income from '../pages/Income';
 
 
 Vue.use(Router);
@@ -115,7 +116,11 @@ const Route = [
         component: CustomRecordHistory,
       },
     ]
-  },
+  }, {
+    path: '/income',
+    name: 'Income',
+    component: Income,
+  }
 ];
 
 // 基本路由

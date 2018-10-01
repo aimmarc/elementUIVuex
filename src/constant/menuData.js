@@ -32,7 +32,7 @@ export const menuData = [
       {
         index: '2-1',
         text: '收益统计',
-        url: '/goods',
+        url: '/income',
         icon: 'icon_income',
       },
       {
