@@ -1,5 +1,5 @@
 <template>
-  <div class="income_wrap">
+  <div class="income_wrap" v-loading="loading">
     <div class="toolbar">
       <div class="tab_bar">
         <div v-bind:class="tabIndex == '0' ? 'tab_item active' : 'tab_item'" @click="changeTabs('0')">今天</div>
@@ -54,7 +54,6 @@
         :data="tableData"
         max-height="600"
         style="width: 100%"
-        v-loading="loading"
       >
         <el-table-column
           prop="date"
@@ -125,7 +124,7 @@
           label="操作">
           <template slot-scope="scope">
             <div class="action">
-              <a class="action_btn">查看详情</a>
+              <a class="action_btn" @click="toDetail(scope.row)">查看详情</a>
             </div>
           </template>
         </el-table-column>
@@ -230,6 +229,7 @@
     },
     methods: {
       loadIncomeData() {
+        this.loading = true;
         let data = [];
         for (let i = 0; i < 3; i++) {
           data.push({
@@ -245,6 +245,9 @@
           });
         }
         this.tableData = data;
+        setTimeout(() => {
+          this.loading = false;
+        }, 1000);
       },
       /**
        * 切换tabs
@@ -265,7 +268,7 @@
        * 查询
        */
       doQuery() {
-
+        this.loadIncomeData();
       },
       loadCharts() {
         //  初始图表
@@ -276,6 +279,13 @@
         window.onresize = function () {
           myChart.resize();
         };
+      },
+      /**
+       * 查看详情
+       * @param record
+       */
+      toDetail(record) {
+        this.$router.push('/incomeDetail');
       }
     }
   }

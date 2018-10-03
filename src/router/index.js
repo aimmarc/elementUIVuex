@@ -24,6 +24,7 @@ import CustomRecord from '../pages/CustomRecord';
 import CustomRecordSub from '../pages/CustomRecordSub';
 import CustomRecordHistory from '../pages/CustomRecordHistory';
 import Income from '../pages/Income';
+import IncomeDetail from '../pages/IncomeDetail';
 
 
 Vue.use(Router);
@@ -120,7 +121,11 @@ const Route = [
     path: '/income',
     name: 'Income',
     component: Income,
-  }
+  }, {
+    path: '/incomeDetail',
+    name: 'IncomeDetail',
+    component: IncomeDetail,
+  },
 ];
 
 // 基本路由
