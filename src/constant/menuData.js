@@ -38,7 +38,7 @@ export const menuData = [
       {
         index: '2-2',
         text: '销售统计',
-        url: '/goods',
+        url: '/sale',
         icon: 'icon_sales',
       },
     ]

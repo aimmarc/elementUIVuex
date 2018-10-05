@@ -1,23 +1,6 @@
 <template>
   <div class="income_wrap" v-loading="loading">
-    <div class="toolbar">
-      <div class="tab_bar">
-        <div v-bind:class="tabIndex == '0' ? 'tab_item active' : 'tab_item'" @click="changeTabs('0')">今天</div>
-        <div v-bind:class="tabIndex == '1' ? 'tab_item active' : 'tab_item'" @click="changeTabs('1')">最近七天</div>
-        <div v-bind:class="tabIndex == '2' ? 'tab_item active' : 'tab_item'" @click="changeTabs('2')">本月</div>
-      </div>
-      <el-date-picker
-        v-model="queryForm.date"
-        size="mini"
-        type="daterange"
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期"
-        :picker-options="pickOptions"
-      >
-      </el-date-picker>
-      <el-button size="mini" type="primary" @click="doQuery">查询</el-button>
-    </div>
+    changeTabs
     <div class="card_panel clearfix">
       <div class="card">
         <div class="total item">
