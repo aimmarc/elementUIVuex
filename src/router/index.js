@@ -26,6 +26,7 @@ import CustomRecordHistory from '../pages/CustomRecordHistory';
 import Income from '../pages/Income';
 import IncomeDetail from '../pages/IncomeDetail';
 import Sale from '../pages/Sale';
+import Discount from '../pages/Discount';
 
 
 Vue.use(Router);
@@ -130,6 +131,10 @@ const Route = [
     path: '/sale',
     name: 'Sale',
     component: Sale,
+  }, {
+    path: '/discount',
+    name: 'Discount',
+    component: Discount,
   },
 ];
 

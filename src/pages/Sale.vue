@@ -19,6 +19,99 @@
       <el-button size="mini" type="primary" @click="doQuery">查询</el-button>
     </div>
     <div id="echarts" class="echarts"></div>
+    <div class="table">
+      <el-table
+        stripe
+        :data="tableData"
+        max-height="600"
+        style="width: 100%"
+      >
+        <el-table-column
+          prop="rank"
+          label="排名"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="name"
+          label="商品名称"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="num"
+          label="销售数量"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="money"
+          label="销售金额"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="gross"
+          label="毛利润"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="inventory"
+          label="当前库存"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+      </el-table>
+    </div>
+    <div class="table">
+      <el-table
+        stripe
+        :data="tableData1"
+        max-height="600"
+        style="width: 100%"
+      >
+        <el-table-column
+          prop="classify"
+          label="商品分类分析"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="num"
+          label="销售数量"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="money"
+          label="销售金额"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="action"
+          align="center"
+          header-align="center"
+          fixed="right"
+          label="操作">
+          <template slot-scope="scope">
+            <div class="action">
+              <a class="action_btn" @click="toDetail(scope.row)">查看小分类</a>
+            </div>
+          </template>
+        </el-table-column>
+      </el-table>
+    </div>
   </div>
 </template>
 
@@ -33,6 +126,8 @@
     data() {
       return {
         tabIndex: '0',
+        tableData: [],
+        tableData1: [],
         queryForm: {
           date: '',
           max: '',
@@ -70,7 +165,7 @@
               show: false
             },
             axisTick: {
-              show: false,
+              show: true,
             },
             axisLine: {
               lineStyle: {
@@ -80,12 +175,13 @@
           },
           series: [
             {
-              name: '收益总额',
+              name: '销售额',
               data: [820, 932, 901, 934, 1290, 1330, 1320, 4000, 3890, 4102, 3780, 4110, 2990, 4560, 3456],  // 这是柱状图数据，请求成功后需组装成现有格式
               type: 'bar',
               itemStyle: {
                 color: '#EC6941',
               },
+              stack: 'one',
               barWidth: 26,
             },
             {
@@ -95,6 +191,7 @@
               itemStyle: {
                 color: '#F6B37F',
               },
+              stack: 'one',
               barWidth: 26,
             },
           ]
@@ -103,6 +200,7 @@
     },
     mounted() {
       this.loadEcharts();
+      this.loadTableData();
     },
     methods: {
       /**
@@ -135,6 +233,36 @@
         window.onresize = function () {
           myChart.resize();
         };
+      },
+      /**
+       * 加载table数据
+       */
+      loadTableData() {
+        let data = [];
+        let data1 = [];
+        for (let i = 0; i < 6; i++) {
+          data.push({
+            rank: i,
+            name: `商品${i}`,
+            num:  `225${i}`,
+            money: `44495${i}`,
+            gross: `44444${i}`,
+            inventory: '——',
+          });
+          data1.push({
+            classify: `分类${i}`,
+            num: `335${i}`,
+            money: `33335${i}`,
+          });
+        }
+        this.tableData = data;
+        this.tableData1 = data1;
+      },
+      /**
+       * 查看小分类
+       */
+      toDetail() {
+
       }
     }
   }

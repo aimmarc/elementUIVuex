@@ -51,7 +51,7 @@ export const menuData = [
       {
         index: '3-1',
         text: '折扣活动',
-        url: '/goods',
+        url: '/discount',
         icon: 'icon_discounts',
       },
       {
