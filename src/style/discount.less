@@ -1,13 +1,49 @@
 .discount_wrap {
   background-color: #fff;
   min-height: 100%;
+  width: auto;
+  min-width: 1100px;
   box-sizing: border-box;
   .form_wrap {
     padding: 54px 0;
-    .el-date-editor,.el-input {
-      width: 503px!important;
-      .el-input__inner {
-        width: 100%;
+    .form_item_one {
+      width: 623px;
+    }
+    .form_item_two {
+      width: 463px;
+      .el-col {
+        .icon_man {
+          position: absolute;
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          top: 5px;
+          background: url("../images/fill@2x.png") center no-repeat;
+          background-size: contain;
+        }
+        .icon_jian {
+          position: absolute;
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          top: 5px;
+          background: url("../images/reduce@2x.png") center no-repeat;
+          background-size: contain;
+        }
+        .el-input {
+          margin-left: 40px;
+        }
+      }
+
+    }
+    .form_item_there {
+      width: 1066px;
+    }
+    .btn_panel {
+      padding-top: 246px;
+      text-align: center;
+      .el-button {
+        width: 204px;
       }
     }
   }

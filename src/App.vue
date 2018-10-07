@@ -24,5 +24,5 @@
   }
 </script>
 
-<style lang="less" src="./style/container.less">
+<style lang="less" src="">
 </style>

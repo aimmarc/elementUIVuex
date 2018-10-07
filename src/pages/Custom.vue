@@ -1,7 +1,10 @@
 <template>
   <div class="custom_wrap">
     <div class="toolbar clearfix">
-      <el-input placeholder="搜索会员名称、手机号、会员卡号" v-model="queryForm.searchKey"></el-input>
+      <div class="search_input">
+        <el-input placeholder="搜索会员名称、手机号、会员卡号" v-model="queryForm.searchKey"></el-input>
+        <i class="search_btn"></i>
+      </div>
       <el-select v-model="queryForm.status" placeholder="请选择状态">
         <el-option
           v-for="item in statusOptions"

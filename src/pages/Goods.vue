@@ -1,7 +1,10 @@
 <template>
   <div class="goods_wrap">
     <div class="toolbar clearfix">
-      <el-input v-model="searchKey" placeholder="搜索商品名称、拼音、条码"></el-input>
+      <div class="search_input">
+        <el-input v-model="searchKey" placeholder="搜索商品名称、拼音、条码"></el-input>
+        <i class="search_btn"></i>
+      </div>
       <el-select v-model="classify" placeholder="请选择类别">
         <el-option
           v-for="item in classifyOptions"

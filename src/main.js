@@ -5,6 +5,7 @@ import router from './router';
 import ElementUI from 'element-ui';
 import './style/base.less';
 import './style/theme/theme.scss';
+import './style/container.less';
 
 
 Vue.config.productionTip = false;

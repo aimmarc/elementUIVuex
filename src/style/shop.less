@@ -1,3 +1,119 @@
 .shop_wrap {
-
+  min-height: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 46px 0;
+  .header {
+    .head_panel {
+      text-align: center;
+      .icon_head {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: url("../images/head@2x.png") center no-repeat;
+        background-size: contain;
+      }
+    }
+    .name_panel {
+      text-align: center;
+      padding-top: 20px;
+      input {
+        border: 0;
+        outline: none;
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+        background-color: #fff;
+      }
+      .icon_edit {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background: url("../images/edit@2x.png") center no-repeat;
+        background-size: contain;
+      }
+    }
+    .id_panel {
+      padding-top: 11px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+    .money_panel {
+      padding: 37px 33px 0;
+      ul {
+        li {
+          position: relative;
+          padding-bottom: 28px;
+          .left {
+            position: absolute;
+            width: 120px;
+            font-size: 14px;
+            color: #aaa;
+            .icon_money {
+              display: inline-block;
+              width: 16px;
+              height: 20px;
+              background: url("../images/money@2x.png") center no-repeat;
+              background-size: contain;
+              vertical-align: middle;
+              margin-right: 11px;
+            }
+            .icon_put {
+              display: inline-block;
+              width: 16px;
+              height: 20px;
+              background: url("../images/put_forward@2x.png") center no-repeat;
+              background-size: contain;
+              vertical-align: middle;
+              margin-right: 11px;
+            }
+          }
+          .right {
+            padding-left: 120px;
+            font-size: 14px;
+            color: #333;
+            line-height: 20px;
+            .money {
+              color: #D9472E;
+            }
+          }
+        }
+      }
+    }
+  }
+  .shop_info {
+    .title_bar {
+      border-bottom: 1px solid #eee;
+      padding: 18px 0;
+      .title {
+        display: inline-block;
+        font-size: 14px;
+        color: #333;
+        padding-left: 31px;
+        line-height: 36px;
+      }
+      .right {
+        float: right;
+        padding-right: 31px;
+        .el-button {
+          height: 36px;
+          width: 88px;
+        }
+      }
+    }
+    .body {
+      padding: 40px 31px;
+      .form_item_one {
+        width: 785px;
+      }
+      .form_item_two {
+        width: 350px;
+      }
+      .back_goods {
+        padding-left: 120px;
+        box-sizing: border-box;
+      }
+    }
+  }
 }

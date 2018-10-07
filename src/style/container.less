@@ -76,6 +76,9 @@
     border-radius: 5px;
     padding: 0 18px;
   }
+  .el-textarea__inner {
+    border: 1px solid #eee;
+  }
   .el-select {
     width: 100%;
     .el-input--suffix {
@@ -90,6 +93,9 @@
     .el-range-input {
       background-color: #f5f5f5;
     }
+  }
+  .el-range-editor--mini .el-range-separator {
+    line-height: 36px;
   }
   .labels {
     position: relative;
@@ -174,6 +180,9 @@
     height: 100px;
     display: block;
   }
+  .el-range-editor--mini.el-input__inner {
+    height: 36px;
+  }
 }
 
 .toolbar {
@@ -195,6 +204,26 @@
     .tab_item.active {
       color: @primary_color;
       background-color: #E4EEFB;
+    }
+  }
+  .search_input {
+    display: inline-block;
+    position: relative;
+    .el-input {
+      width: 300px;
+      .el-input__inner {
+        padding-right: 40px;
+      }
+    }
+    .search_btn {
+      display: inline-block;
+      position: absolute;
+      top: 10px;
+      left: 270px;
+      width: 18px;
+      height: 18px;
+      background: url("../images/seach@2x.png") center no-repeat;
+      background-size: contain;
     }
   }
   .right_panel {
@@ -238,6 +267,9 @@
     height: 30px;
     border-radius: 5px;
     margin-left: 39px;
+  }
+  .el-input {
+    width: auto;
   }
 }
 
