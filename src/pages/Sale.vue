@@ -18,6 +18,16 @@
       </el-date-picker>
       <el-button size="mini" type="primary" @click="doQuery">查询</el-button>
     </div>
+    <div class="charts_tool">
+      <div class="left">
+        <div class="item"><i class="icon_xiaoshoue"></i>销售额</div>
+        <div class="item"><i class="icon_maoli"></i>毛利润</div>
+      </div>
+      <div class="right">
+        <el-radio v-model="radio" label="1">按销售额</el-radio>
+        <el-radio v-model="radio" label="2">按销量</el-radio>
+      </div>
+    </div>
     <div id="echarts" class="echarts"></div>
     <div class="table">
       <el-table
@@ -70,7 +80,7 @@
         </el-table-column>
       </el-table>
     </div>
-    <div class="table">
+    <div class="table" v-if="!showDetail">
       <el-table
         stripe
         :data="tableData1"
@@ -112,6 +122,37 @@
         </el-table-column>
       </el-table>
     </div>
+    <div class="table" v-if="showDetail">
+      <div class="title_panel">女装 <i class="icon_close" @click="showDetail = false"></i></div>
+      <el-table
+        stripe
+        :data="tableData2"
+        max-height="600"
+        style="width: 100%"
+      >
+        <el-table-column
+          prop="classify"
+          label="商品分类分析"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="num"
+          label="销售数量"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          prop="money"
+          label="销售金额"
+          header-align="center"
+          align="center"
+        >
+        </el-table-column>
+      </el-table>
+    </div>
   </div>
 </template>
 
@@ -128,6 +169,9 @@
         tabIndex: '0',
         tableData: [],
         tableData1: [],
+        tableData2: [],
+        showDetail: false,
+        radio: '1',
         queryForm: {
           date: '',
           max: '',
@@ -138,8 +182,8 @@
         },
         option: {
           grid: {
-            left: 60,
-            right: 20,
+            left: 80,
+            right: 40,
             top: 40,
             bottom: 80,
           },
@@ -171,6 +215,12 @@
               lineStyle: {
                 color: '#ccc',
               }
+            }
+          },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
             }
           },
           series: [
@@ -244,7 +294,7 @@
           data.push({
             rank: i,
             name: `商品${i}`,
-            num:  `225${i}`,
+            num: `225${i}`,
             money: `44495${i}`,
             gross: `44444${i}`,
             inventory: '——',
@@ -262,7 +312,16 @@
        * 查看小分类
        */
       toDetail() {
-
+        this.showDetail = true;
+        let data = [];
+        for (let i = 0; i < 6; i++) {
+          data.push({
+            classify: `分类${i}`,
+            num: `335${i}`,
+            money: `33335${i}`,
+          });
+        }
+        this.tableData2 = data;
       }
     }
   }

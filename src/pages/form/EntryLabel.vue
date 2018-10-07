@@ -1,17 +1,19 @@
 <template>
-  <el-dialog title="添加标签" :visible.sync="formProps.visible" :before-close="formProps.onCancel" width="500px">
-    <div class="form_wrap">
-      <el-form :model="addForm" :rules="rules" ref="addForm" label-width="120px">
-        <el-form-item label="活动名称" prop="labelName">
-          <el-input v-model="addForm.labelName"></el-input>
-        </el-form-item>
-      </el-form>
-    </div>
-    <div slot="footer" class="dialog-footer">
-      <el-button @click="onBindCancel">取 消</el-button>
-      <el-button type="primary" @click="onBindOk">确 定</el-button>
-    </div>
-  </el-dialog>
+  <div class="modal">
+    <el-dialog title="添加标签" :visible.sync="formProps.visible" :before-close="formProps.onCancel" width="500px">
+      <div class="form_wrap">
+        <el-form :model="addForm" :rules="rules" ref="addForm" label-width="120px">
+          <el-form-item label="活动名称" prop="labelName">
+            <el-input v-model="addForm.labelName"></el-input>
+          </el-form-item>
+        </el-form>
+      </div>
+      <div slot="footer" class="dialog-footer">
+        <div @click="onBindCancel" class="btn btn_cancel">取 消</div>
+        <div type="primary" @click="onBindOk" class="btn btn_ok">确 定</div>
+      </div>
+    </el-dialog>
+  </div>
 </template>
 
 <script>

@@ -27,6 +27,7 @@ import Income from '../pages/Income';
 import IncomeDetail from '../pages/IncomeDetail';
 import Sale from '../pages/Sale';
 import Discount from '../pages/Discount';
+import HistoryActive from '../pages/HistoryActive';
 
 
 Vue.use(Router);
@@ -135,6 +136,10 @@ const Route = [
     path: '/discount',
     name: 'Discount',
     component: Discount,
+  }, {
+    path: '/historyActive',
+    name: 'HistoryActive',
+    component: HistoryActive,
   },
 ];
 

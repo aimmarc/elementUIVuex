@@ -2,7 +2,62 @@
   background-color: #fff;
   box-sizing: border-box;
   min-height: 100%;
+  .charts_tool {
+    position: relative;
+    .left {
+      position: absolute;
+      width: 300px;
+      padding-left: 80px;
+      .item {
+        font-size: 14px;
+        color: #333;
+        display: inline-block;
+        padding-right: 38px;
+        .icon_xiaoshoue {
+          display: inline-block;
+          background-color: #F6B37F;
+          width: 12px;
+          height: 12px;
+          margin-right: 13px;
+        }
+        .icon_maoli {
+          display: inline-block;
+          background-color: #EC6941;
+          width: 12px;
+          height: 12px;
+          margin-right: 13px;
+        }
+      }
+    }
+    .right {
+      padding-left: 300px;
+      padding-right: 34px;
+      text-align: right;
+    }
+  }
   .echarts {
     height: 354px;
+  }
+  .title_panel {
+    position: relative;
+    width: 146px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #ECF3FC;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 5px 5px 0 0;
+    .icon_close {
+      position: absolute;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: url("../images/close@2x1.png") center no-repeat;
+      background-size: contain;
+      right: 13px;
+      top: 13px;
+    }
   }
 }

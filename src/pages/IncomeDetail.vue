@@ -115,13 +115,22 @@
         formProps: {
           visible: false,
           returnForm: {
-
+            reason: '',
+            note: '',
           },
           rules: {
-
+            reason: [
+              {required: true, message: '请选择退货原因', trigger: 'change'},
+            ],
+            note: [
+              {required: true, message: '请输入备注', trigger: 'blur'},
+              {max: 30, message: '备注长度超出限制', trigger: 'blur'},
+            ]
           },
           onCancel: this.onCancel,
           onOk: this.onOk,
+          num: 1,
+          plus: this.plus,
         }
       }
     },
@@ -178,16 +187,21 @@
       onOk(form) {
         form.validate(valid => {
           if (valid) {
-            // this.tableData[this.expandIndex].subData.push({
-            //   title: this.formProps.addForm.classifyName,
-            //   goods: 0,
-            // });
             this.formProps.visible = false;
-            this.$message.success('小分类添加成功');
+            this.$message.success('退货成功');
             form.resetFields();
           }
         })
       },
+      plus(type) {
+        if (type == 1) {
+          if (this.formProps.num > 1) {
+            this.formProps.num--;
+          }
+        } else {
+          this.formProps.num++;
+        }
+      }
     }
   }
 </script>

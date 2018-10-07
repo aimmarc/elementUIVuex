@@ -1,6 +1,10 @@
 .return_goods {
   .goods_info {
+    position: relative;
+    min-height: 88px;
+    padding-bottom: 38px;
     .img {
+      position: absolute;
       display: inline-block;
       width: 80px;
       height: 80px;
@@ -8,6 +12,66 @@
       img {
         width: 100%;
       }
+    }
+    .main {
+      padding-left: 102px;
+      padding-right: 125px;
+      .title {
+        font-size: 14px;
+        color: #333;
+        line-height: 25px;
+      }
+      .price {
+        font-size: 14px;
+        color: #888;
+        padding-top: 14px;
+      }
+    }
+    .right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      .plus {
+        display: inline-block;
+        width: 23px;
+        height: 22px;
+        background: url("../images/plus@2x.png") center no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      .reduce {
+        display: inline-block;
+        width: 23px;
+        height: 22px;
+        background: url("../images/reduce@2x1.png") center no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      span {
+        line-height: 22px;
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+      }
+    }
+  }
+  .money_panel {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 42px;
+    padding-bottom: 25px;
+    .left {
+      position: absolute;
+      font-size: 14px;
+      color: #333;
+    }
+    .right {
+      padding-left: 120px;
+      text-align: right;
+      font-size: 14px;
+      color: #D9472E;
     }
   }
 }

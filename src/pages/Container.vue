@@ -136,6 +136,27 @@
       setHeaderTabs(title) {
         if (REGEXP_HEADER.test(title)) {
           store.dispatch(ACTION_SET_HEADERTABS, true);
+          if (title == '折扣活动') {
+            this.headerProps.tabsValue = [
+              {
+                text: '当前活动',
+                url: '#/discount',
+              }, {
+                text: '历史活动',
+                url: '#/HistoryActive',
+              },
+            ]
+          } else {
+            this.headerProps.tabsValue = [
+              {
+                text: '商品管理',
+                url: '#/goods',
+              }, {
+                text: '分类管理',
+                url: '#/goodsClassify',
+              },
+            ]
+          }
           this.headerProps.headerTabs = store.state.headerTabs;
         } else {
           store.dispatch(ACTION_SET_HEADERTABS, false);

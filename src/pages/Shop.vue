@@ -122,17 +122,22 @@
         </div>
       </div>
     </div>
+    <EntryLabel  :formProps="formProps"></EntryLabel>
   </div>
 </template>
 
 <script>
   import {CITY_DATA} from "../constant/city";
   import {fileReader} from "../util/common";
+  import EntryLabel from './form/EntryLabel';
 
 
   // 我的店铺
   export default {
     name: "Shop",
+    components: {
+      EntryLabel
+    },
     data() {
       return {
         headInfo: {
@@ -186,6 +191,11 @@
         options: CITY_DATA,
         selectedOptions: [],
         fileList: [],
+        formProps: {
+          visible: false,
+          onOk: this.onOk,
+          onCancel: this.onCancel,
+        },
       }
     },
     mounted() {
@@ -222,7 +232,39 @@
             console.log(this.backForm);
           }
         })
-      }
+      },
+      /**
+       * dlg确认事件
+       * @param formData
+       * @param form
+       */
+      onOk(formData, form) {
+        if (formData == undefined) {
+          return;
+        }
+        this.labels.push(formData.labelName);
+        this.formProps.visible = false;
+        form.resetFields();
+        this.$message.success('标签添加成功');
+      },
+      /**
+       * dlg取消事件
+       * @param form
+       */
+      onCancel(form) {
+        if (form == undefined) {
+          return;
+        }
+        this.formProps.visible = false;
+        form.resetFields();
+      },
+      /**
+       * 删除label
+       * @param index
+       */
+      deleteLabel(index) {
+        this.labels.splice(index, 1);
+      },
     }
   }
 </script>
